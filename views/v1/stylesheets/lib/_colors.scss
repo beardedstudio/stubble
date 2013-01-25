@@ -1,0 +1,12 @@
+$text-color: #222; 
+$heading-color: $text-color; //#636466
+$text-color-subtle: lighten($text-color, 30%);//#939598
+
+$light-text-color: #deddd2;
+
+$link-color: #444;
+$link-color-hover: #000;
+
+$background-color: #2a2a2a;
+
+$border-color: lighten($text-color, 50%);

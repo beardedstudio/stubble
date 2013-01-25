@@ -1,0 +1,43 @@
+// site-wide header styles
+#site-header {
+  margin:2em 0;
+}
+
+#primary-navigation, #user-navigation {
+  text-align:center;
+  li {
+    @include inline-block;
+    @include title-face;
+    text-transform:uppercase;
+    margin-right:1.5em;
+
+    &:last-child {
+      margin-right:0;
+    }
+  }
+}
+
+#site-name {
+  @include hide-text;
+  margin: 0.5em 0 0.75em 0;
+  background: url(/v1/images/wtr-logo.png) center center no-repeat;
+  height:65px;
+}
+
+@media (min-width: 44em) {
+  #site-header {
+    text-align:center;
+  }
+
+  #primary-navigation, #user-navigation, #site-name {
+    @include inline-block;
+  }
+
+  #site-name {
+    width:165px;
+    margin-right:1em;
+    margin-left:1em;
+  }
+
+ 
+}

@@ -1,0 +1,58 @@
+// general typographic styles
+
+body {
+  @include copy-face;
+  color: $text-color;
+  line-height: 1.2;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+// Headings
+//////////////////////////////////////
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.1;
+  color: $heading-color;
+}
+
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
+
+h3 {
+  @include heading-3;
+}
+
+h4 {
+  @include heading-4;
+}
+
+h5 {
+  @include heading-5;
+}
+
+h6 {
+  @include heading-6;
+}
+
+
+
+// Basic elements
+//////////////////////////////////////
+
+p {
+}
+
+a {
+  @include link;
+}
+
+
+// Other elements
+//////////////////////////////////////
+

@@ -1,0 +1,121 @@
+/* Loosely based on 960.gs */
+
+$gutter_width: 3.5%;
+$columns: 12;
+$column_width: 5.125%;
+$grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
+
+// A 16-column version of the grid:
+
+// $gutter_width: 4%;
+// $columns: 16;
+// $column_width: 2.5%;
+// $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
+
+@mixin container {
+  width: $grid_width;
+  margin: auto;
+  max-width: 1200px;
+  *zoom: 1;
+}
+
+@function column_width($num) {
+  @return ($num * $column_width) + (($num - 1) * ($gutter_width));
+}
+
+@mixin column($num) {
+  display: inline;
+  float: left;
+  width: column_width($num);
+  margin-right: $gutter_width;
+  margin-left: 0;
+}
+
+@mixin prepend($num) {
+  margin-left: column_width($num) + ($gutter_width * 2);
+}
+
+@mixin append($num) {
+  margin-right: column_width($num) + ($gutter_width * 2);
+}
+
+@mixin last {
+  margin-right: 0;
+}
+
+@mixin last-col2 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    .lt-ie8 & {
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
+  }
+  &:nth-of-type(2n+2) {
+    @include last;
+    float: right;
+  }
+  &:nth-of-type(2n+3) {
+    clear: both;
+  }
+}
+
+@mixin last-col3 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    .lt-ie8 & {
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
+  }
+  &:nth-of-type(3n+3) {
+    @include last;
+    float: right;
+  }
+  &:nth-of-type(3n+4) {
+    clear: both;
+  }
+}
+
+@mixin last-col4 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    .lt-ie8 & {
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
+  }
+  &:nth-of-type(4n+4) {
+    @include last;
+    float: right;
+  }
+  &:nth-of-type(4n+5) {
+    clear: both;
+  }
+}
+
+@mixin last-col6 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    .lt-ie8 & {
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
+  }
+  &:nth-of-type(6n+6) {
+    @include last;
+    float: right;
+  }
+  &:nth-of-type(6n+7) {
+    clear: both;
+  }
+}
+
+@mixin mobile-grid {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}

@@ -1,0 +1,41 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.7)
+    chunky_png (1.2.6)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    fssm (0.2.9)
+    haml (3.1.4)
+    heroku (2.24.1)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.1)
+      rest-client (~> 1.6.1)
+      rubyzip
+    launchy (2.1.0)
+      addressable (~> 2.2.6)
+    mime-types (1.18)
+    netrc (0.7.1)
+    rack (1.4.1)
+    rack-protection (1.2.0)
+      rack
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rubyzip (0.9.7)
+    sass (3.2.3)
+    sinatra (1.3.3)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    tilt (1.3.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  compass
+  haml
+  heroku
+  sinatra

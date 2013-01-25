@@ -1,0 +1,23 @@
+// variables, mixins and extends related to media queries.
+
+// math for generating em-based widths from pixel values
+// target/context = result
+// (pixels/body font size) * 1em = result in ems
+
+$body-font-size: 16;
+
+// "standard" breakpoints
+// $break-NAME: (PIXEL-WIDTH/$body-font-size) * 1em;
+// use them inside of any selector in any stylesheet:
+//  @media (min-width: $break-small) {
+//    display: block;
+//  }
+
+$break-small: (500/$body-font-size) * 1em;
+$break-medium: (700/$body-font-size) * 1em;
+//$break-large: ;
+//$break-xl: ;
+//$break-huge: ;
+
+//$break-short: ;
+//$break-tall: ;

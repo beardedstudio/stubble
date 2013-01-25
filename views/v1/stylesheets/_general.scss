@@ -1,0 +1,11 @@
+// styles not specific to any particular site page.
+// place things like "general" paragraph styles, heading styles, base list styles, etc. here.
+
+.container {
+  @include container;
+  width: 95%;
+}
+
+a {
+  text-decoration:none;
+}
