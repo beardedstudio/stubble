@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'compass'
+require 'breakpoint'
 
 # set sinatra's variables
 set :app_file, __FILE__
