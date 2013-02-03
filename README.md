@@ -1,4 +1,4 @@
-stubble
+Stubble
 =======
 
-Stubble: A front end starter kit
+Stubble: A front end starter kit from Bearded.

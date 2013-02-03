@@ -1,4 +1,4 @@
-/* Loosely based on 960.gs */
+// Loosely based on 960.gs //
 
 $gutter_width: 3.5%;
 $columns: 12;
@@ -12,10 +12,10 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 // $column_width: 2.5%;
 // $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 
-@mixin container {
+@mixin container($max-width: 81.25em) {
   width: $grid_width;
   margin: auto;
-  max-width: 1200px;
+  max-width: $max-width;
   *zoom: 1;
 }
 

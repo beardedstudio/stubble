@@ -1,23 +1,13 @@
 // variables, mixins and extends related to media queries.
 
-// math for generating em-based widths from pixel values
-// target/context = result
-// (pixels/body font size) * 1em = result in ems
+// full docs here:
+// https://github.com/canarymason/breakpoint
 
-$body-font-size: 16;
+// default option here is "false". Set it to true & it will do px to em calculations for you.
+$breakpoint-to-ems: true;
 
-// "standard" breakpoints
-// $break-NAME: (PIXEL-WIDTH/$body-font-size) * 1em;
-// use them inside of any selector in any stylesheet:
-//  @media (min-width: $break-small) {
-//    display: block;
-//  }
-
-$break-small: (500/$body-font-size) * 1em;
-$break-medium: (700/$body-font-size) * 1em;
-//$break-large: ;
-//$break-xl: ;
-//$break-huge: ;
-
-//$break-short: ;
-//$break-tall: ;
+// "suggested" variable names for pre-defined breakpoints
+//$breakpoint-small-width: 320px; // it's ok to put px values in here if you've set "-to-ems" to "true"!
+//$breakpoint-medium-width: ;
+//$breakpoint-large-width: ;
+//$breakpoint-xl-width: ;

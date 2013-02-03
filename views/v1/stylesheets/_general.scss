@@ -1,11 +1,40 @@
 // styles not specific to any particular site page.
 // place things like "general" paragraph styles, heading styles, base list styles, etc. here.
 
+// if you're calling the container mixin, you can define a custom max-width
+// otherwise, the max-width's default value is 81.25em (1300px)
+//.container {
+//  @include container(70em);
+//}
+
+// enable border-box sizing for all elements - http://paulirish.com/2012/box-sizing-border-box-ftw/
+* {
+  @include box-sizing(border-box);
+}
+
 .container {
   @include container;
   width: 95%;
 }
 
+html {}
+
+body {}
+
+p {}
+
 a {
-  text-decoration:none;
+  &:hover,
+  &:focus {
+  }
+}
+
+ul {
+  li {
+  }
+}
+
+ol {
+  li {
+  }
 }

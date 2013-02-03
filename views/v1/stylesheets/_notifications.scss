@@ -1,1 +1,27 @@
 // error messages, confirmation messages, alert messages
+
+.messages {
+  margin: 1em 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  
+  .success,
+  .error {
+    padding: 0.35em 0.5em;
+    @include box-sizing(border-box);
+    @include border-radius(4px);
+    //border: 1px solid $text-color-subtle;
+  }
+
+  .success {
+    background-color: #DFF0D8;
+    color: #468847;
+    border-color: darken(#DFF0D8, 10%);
+  }
+
+  .error {
+    background-color: #F2DEDE;
+    color: #B94A48;
+    border-color: darken(#F2DEDE, 10%);
+  }
+}
