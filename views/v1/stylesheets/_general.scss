@@ -13,6 +13,9 @@
 }
 
 .container {
+  // change your max-width like so:
+  // @include container(68.75em);
+  // default max-width is 81.25em (1300px)
   @include container;
   width: 95%;
 }
@@ -31,10 +34,28 @@ a {
 
 ul {
   li {
+    list-style: disc;
+    li {
+      font-size: inherit;
+    }
   }
 }
 
 ol {
   li {
+    list-style: decimal;
+    li {
+      font-size: inherit;
+    }
   }
+}
+
+strong,
+bold {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
 }

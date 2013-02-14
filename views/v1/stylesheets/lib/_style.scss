@@ -39,7 +39,8 @@
   @include title-face;
   text-decoration: none;
   color: $link-color-hover;
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
     color: darken($link-color-hover, 10%);
     border-color: darken($link-color-hover, 10%);
@@ -48,7 +49,8 @@
   @media only screen and (min-width: 34em) {
     color: $link-color;
     border-color: $link-color;
-    &:hover {
+    &:hover,
+    &:focus {
       color: darken($link-color, 10%);
       border-color: darken($link-color, 10%);
     }
@@ -58,7 +60,8 @@
     border-color: $highlight-color-subtle;
     padding: 0.5em 1em;
     color: $text-color;
-    &:hover {
+    &:hover,
+    &:focus {
       color: darken($text-color, 10%);
       border-color: $highlight-color;
     }
@@ -67,7 +70,8 @@
   @media only screen and (min-width: 70em) {
     color: $link-color-alt;
     border-color: $link-color-alt;
-    &:hover {
+    &:hover,
+    &:focus {
       color: darken($link-color-alt, 10%);
       border-color: darken($link-color-alt, 10%);
     }
@@ -80,7 +84,8 @@
   font-size: 0.875em;
   color: $text-color-subtle;
   background-color: inherit;
-  &:hover {
+  &:hover,
+  &:focus {
     color: $text-color;
     border-color: $text-color;
     cursor: pointer;
