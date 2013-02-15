@@ -11,3 +11,6 @@ $breakpoint-to-ems: true;
 //$breakpoint-medium-width: ;
 //$breakpoint-large-width: ;
 //$breakpoint-xl-width: ;
+
+// media query for hi-resolution displays
+$breakpoint-hi-res: 2 device-pixel-ratio;

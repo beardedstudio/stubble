@@ -1,0 +1,243 @@
+@mixin divider-bottom {
+  padding-bottom: 1em;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1em;
+}
+
+@mixin divider-top {
+  padding-top: 1em;
+  border-top: 1px solid $border-color;
+  margin-top: 1em;
+}
+
+@mixin divider-right {
+  padding-right: 1em;
+  border-right: 1px solid $border-color;
+  margin-right: 1em;
+}
+
+@mixin divider-left {
+  padding-left: 1em;
+  border-left: 1px solid $border-color;
+  margin-left: 1em;
+}
+
+@mixin divider-none {
+  padding: 0;
+  border: 0 none;
+  margin: 0;
+}
+
+@mixin image-border {
+  border: 1px solid $border-color;
+  @include box-sizing(border-box);
+}
+
+@mixin button {
+  border: 3px solid $link-color-hover;
+  padding: 0.5em 1em;
+  @include title-face;
+  text-decoration: none;
+  color: $link-color-hover;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: darken($link-color-hover, 10%);
+    border-color: darken($link-color-hover, 10%);
+  }
+
+  @media only screen and (min-width: 34em) {
+    color: $link-color;
+    border-color: $link-color;
+    &:hover,
+    &:focus {
+      color: darken($link-color, 10%);
+      border-color: darken($link-color, 10%);
+    }
+  }
+
+  @media only screen and (min-width: 55em) {
+    border-color: $highlight-color-subtle;
+    padding: 0.5em 1em;
+    color: $text-color;
+    &:hover,
+    &:focus {
+      color: darken($text-color, 10%);
+      border-color: $highlight-color;
+    }
+  }
+
+  @media only screen and (min-width: 70em) {
+    color: $link-color-alt;
+    border-color: $link-color-alt;
+    &:hover,
+    &:focus {
+      color: darken($link-color-alt, 10%);
+      border-color: darken($link-color-alt, 10%);
+    }
+  }
+}
+
+@mixin button-form {
+  border: 1px solid $border-color;
+  padding: 0.35em 2em;
+  font-size: 0.875em;
+  color: $text-color-subtle;
+  background-color: inherit;
+  &:hover,
+  &:focus {
+    color: $text-color;
+    border-color: $text-color;
+    cursor: pointer;
+  }
+}
+
+// rem sizing mixin
+// Thanks, Sparkbox!! https://github.com/sparkbox/project-init/blob/master/scss/_mixins.scss
+// be sure that you've set a $base-font-multiplier in your variables file!
+//
+// Target Size / Base Size = Value
+// usage:
+// h3 {
+//  @include rem(font-size, 1.25);
+// }
+
+@mixin rem( $property, $a:0, $b:$a, $c:$a, $d:$b ) {
+  @if ( $property == "font-size" ) {
+    // $a is the font size
+    // %b is the keyword
+    @if ( $a != $b ) {
+      font-size: $b;
+    }
+    @else {
+      font-size: $a * $base-font-multiplier * 16px;
+    }
+    font-size: $a * 1rem;
+  } @else {
+    $apx: $a * $base-font-multiplier * 16px;
+    $bpx: $b * $base-font-multiplier * 16px;
+    $cpx: $c * $base-font-multiplier * 16px;
+    $dpx: $d * $base-font-multiplier * 16px;
+    $arem: $a * 1rem;
+    $brem: $b * 1rem;
+    $crem: $c * 1rem;
+    $drem: $d * 1rem;
+
+    @if ( $property == "padding" or $property == "margin" ){
+      #{$property}: $apx $bpx $cpx $dpx;
+      #{$property}: $arem $brem $crem $drem;
+    } @else {
+      #{$property}: $apx;
+      #{$property}: $arem;
+    }
+  }
+}
+
+
+// generate separate styles for "old" versions of IE
+// http://jakearchibald.github.com/sass-ie/
+$old-ie: false !default;
+@mixin old-ie {
+  @if $old-ie {
+    @content;
+  }
+}
+
+// hi-resolution sprite mixin
+// Thanks, Sparkbox & Ethan Muller! https://gist.github.com/ethanmuller/4039729
+
+@mixin hd-sprite( $sprite-map-sd, $sprite-map-hd, $icon, $offset-x:0, $offset-y:0, $width: none, $center: none ){
+
+  %generate-sprite-image {
+    // Just ignore this bit.
+    // It makes sure the sprite is generated before
+    // its width/height are accessed.
+    // NOTE: it is never rendered to CSS.
+    content: sprite-url($sprite-map-sd);
+    content: sprite-url($sprite-map-hd);
+  }
+
+  // Get width/height of generated sprite image
+  $sheet-width-sd: image-width(sprite-path($sprite-map-sd));
+  $sheet-height-sd: image-height(sprite-path($sprite-map-sd));
+  $sheet-width-hd: image-width(sprite-path($sprite-map-hd));
+  $sheet-height-hd: image-height(sprite-path($sprite-map-hd));
+
+
+  // Get width/height of the icon we want
+  $icon-width: image-width(sprite-file($sprite-map-sd, $icon)); 
+  $icon-height: image-height(sprite-file($sprite-map-sd, $icon)); 
+
+  // Get aspect ratio of $icon
+  $aspect-ratio: $icon-width / $icon-height;
+
+  // This is the relationship between original/new widths
+  // If a $width isn't passed, it stays at 1.
+  $scale-ratio: 1;
+
+  @if $width != none { // If width is set...
+    // Set proper scale ratio
+    $scale-ratio: $icon-width / $width;
+    // Rewrite icon width
+    $icon-width: $width;
+    // Get new icon height from aspect ratio
+    $icon-height: round($icon-width / $aspect-ratio);
+  }
+
+  position: relative; // To contain absolutely-positioned :before element
+
+  &:before {
+    content: "\0000a0";
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    @if $center == none {
+      top: $offset-y;
+      left: $offset-x;
+    } @else if $center == x {
+      top: $offset-y;
+      left: 50%;
+      margin-left: (-1) * ($icon-width / 2) + $offset-x;
+    } @else if $center == y {
+      top: 50%;
+      left: $offset-x;
+      margin-top: (-1) * ($icon-height / 2) + $offset-y;
+    } @else if $center == both {
+      top: 50%;
+      left: 50%;
+      margin-top: (-1) * ($icon-height / 2) + $offset-y;
+      margin-left: (-1) * ($icon-width / 2) + $offset-x;
+    }
+    width: $icon-width; /* icon width */
+    height: $icon-height; /* icon height */
+  }
+
+  @media (-webkit-max-device-pixel-ratio: 1.49999),
+  (-o-max-device-pixel-ratio: 3/2),
+  (-moz-max-device-pixel-ratio: 1.49999),
+  (max-device-pixel-ratio: 1.49999) {
+    $x: nth(sprite-position($sprite-map-sd, $icon), 1);
+    $y: nth(sprite-position($sprite-map-sd, $icon), 2);
+
+    &:before {
+      background-image: sprite-url($sprite-map-sd);
+      background-position: $x round(($y / $scale-ratio)); // scale down the $y positioning (if icon width is set)
+      background-size: auto round(( $sheet-height-sd / $scale-ratio ));
+    }
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+  (-o-min-device-pixel-ratio: 3/2),
+  (-moz-min-device-pixel-ratio: 1.5),
+  (min-device-pixel-ratio: 1.5) {
+    $x: nth(sprite-position($sprite-map-hd, $icon), 1);
+    $y: nth(sprite-position($sprite-map-hd, $icon), 2);
+
+    &:before {
+      background-image: sprite-url($sprite-map-hd);
+      background-position: $x round( ($y / 2) / $scale-ratio );
+      background-size: auto round(( ($sheet-height-hd / 2) / $scale-ratio ));
+    }
+  }
+}
+// end hi-res sprite mixin

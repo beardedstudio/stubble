@@ -3,11 +3,11 @@
 
 @import "breakpoint";
 
-@import "lib/colors";
+@import "lib/variables";
 @import "lib/grid";
 @import "lib/mediaqueries";
-@import "lib/typography";
-@import "lib/style";
+@import "lib/typographic-mixins";
+@import "lib/general-mixins";
 
 @import "general-typography";
 @import "general";

@@ -1,4 +1,12 @@
 // styles specific to internal pages
 
 .internal {
+  .primary {
+    // prevent long URLs from breaking out of container
+    // http://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+    a {
+      @include word-break(break-all);
+      @include hyphens(auto);
+    }
+  }
 }
