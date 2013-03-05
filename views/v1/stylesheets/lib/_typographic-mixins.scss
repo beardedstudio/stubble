@@ -6,13 +6,8 @@
 }
 
 @mixin title-face {
-  font-family: "franklin-gothic-urw", arial, "helvetica neue", helvetica, sans-serif;
+  font-family: arial, "helvetica neue", helvetica, sans-serif;
   font-weight: 500;
-}
-
-@mixin frenchclarendon-face {
-  font-family: "french-octagon", arial, "helvetica neue", helvetica, sans-serif;
-  font-weight: 400;
 }
 
 @mixin heading {

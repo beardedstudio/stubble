@@ -1,1 +1,6 @@
 // site-wide form styles
+
+// get rid of "default" iOS button styling for submit buttons
+input[type=submit] {
+  @include appearance(none);
+}
