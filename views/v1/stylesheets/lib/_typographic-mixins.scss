@@ -43,7 +43,6 @@
 @mixin heading-1 {
   @include heading;
   font-size: 2.5em;
-  text-transform: uppercase;
 }
 
 @mixin heading-2 {
@@ -69,5 +68,4 @@
 @mixin heading-6 {
   @include heading;
   font-size: 0.875em;
-  text-transform: uppercase;
 }

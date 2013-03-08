@@ -24,6 +24,7 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin column($num) {
+  @include box-sizing(border-box);
   display: inline;
   float: left;
   width: column_width($num);

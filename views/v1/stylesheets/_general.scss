@@ -7,11 +7,6 @@
 //  @include container(70em);
 //}
 
-// enable border-box sizing for all elements - http://paulirish.com/2012/box-sizing-border-box-ftw/
-* {
-  @include box-sizing(border-box);
-}
-
 .container {
   // change your max-width like so:
   // @include container(68.75em);
