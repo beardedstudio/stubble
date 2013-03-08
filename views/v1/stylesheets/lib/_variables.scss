@@ -1,15 +1,17 @@
-$text-color: #222; 
-$heading-color: $text-color; //#636466
-$text-color-subtle: lighten($text-color, 30%);//#939598
+$text-color: #888; 
+$heading-color: $text-color;
+$text-color-subtle: lighten($text-color, 30%);
 
-$light-text-color: #deddd2;
+$link-color: #555;
+$link-color-hover: darken($link-color, 15%);
 
-$link-color: #444;
-$link-color-hover: #000;
+$highlight-color: #333;
+$highlight-color-hover: darken($highlight-color, 15%);
 
-$background-color: #2a2a2a;
+$border-color: #ccc;
 
-$border-color: lighten($text-color, 50%);
+$background-color: #fff;
+$background-color-subtle: #eee;
 
 // rem mixin dependency:
 $base-font-multiplier: 1;

@@ -24,38 +24,100 @@ html {}
 
 body {}
 
-p {}
+
+// General Typographic Styles
+//////////////////////////////////////
+
+body {
+  @include copy-face;
+  color: $text-color;
+  line-height: 1.4;
+  // font-size: 100% is inherited as the baseline size from the reset file, then modified with the media queries, below.
+
+  @media (min-width: 40em) and (max-width: 55em) {
+    font-size: 87.5%;
+  }
+  @media (min-width: 70em) {
+    font-size: 110%;
+  }
+}
+
+////////// Block-level Elements
+
+p {
+  margin-bottom: 1em;
+}
+
+ul, ol {
+  li li {
+    font-size: inherit;
+  }
+}
+
+// In Main Content Area
+
+#main-content {
+  ul, ol {
+    margin-bottom: 0.5em;
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  ul {
+    li {
+      list-style: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style: decimal;
+    }
+  }
+}
+
+///// Headings
+
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
+
+h3 {
+  @include heading-3;
+}
+
+h4 {
+  @include heading-4;
+}
+
+h5 {
+  @include heading-5;
+}
+
+h6 {
+  @include heading-6;
+}
+
+////////// Inline Elements
 
 a {
-  &:hover,
-  &:focus {
-  }
+  @include link;
 }
 
-ul {
-  li {
-    list-style: disc;
-    li {
-      font-size: inherit;
-    }
-  }
-}
-
-ol {
-  li {
-    list-style: decimal;
-    li {
-      font-size: inherit;
-    }
-  }
-}
-
-strong,
-bold {
+strong, b {
   font-weight: bold;
 }
 
-em,
-i {
+em, i {
   font-style: italic;
 }
+
+
+// Other elements
+//////////////////////////////////////
+
