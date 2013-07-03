@@ -12,7 +12,6 @@
   // @include container(68.75em);
   // default max-width is 81.25em (1300px)
   @include container;
-  width: 95%;
 }
 
 html {}
@@ -27,14 +26,6 @@ body {
   @include copy-face;
   color: $text-color;
   line-height: 1.4;
-  // font-size: 100% is inherited as the baseline size from the reset file, then modified with the media queries, below.
-
-  @media (min-width: 40em) and (max-width: 55em) {
-    font-size: 87.5%;
-  }
-  @media (min-width: 70em) {
-    font-size: 110%;
-  }
 }
 
 ////////// Block-level Elements
@@ -51,24 +42,21 @@ ul, ol {
 
 // In Main Content Area
 
-#main-content {
+.primary {
   ul, ol {
-    margin-bottom: 0.5em;
+    margin: 0 0 0.5em 2em;
     li {
       margin-bottom: 0.5em;
     }
   }
 
   ul {
-    li {
-      list-style: disc;
-    }
+    list-style: disc;
+    margin-top: 0.5em;
   }
 
   ol {
-    li {
-      list-style: decimal;
-    }
+    list-style: decimal;
   }
 }
 

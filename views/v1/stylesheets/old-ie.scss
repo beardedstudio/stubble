@@ -1,6 +1,0 @@
-// generate separate styles for "old" versions of IE
-// http://jakearchibald.github.com/sass-ie/
-// Depends on "old-ie" mixin in _general-mixins.scss
-
-$old-ie: true;
-@import 'screen';

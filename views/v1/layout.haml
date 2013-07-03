@@ -1,0 +1,82 @@
+- path = request.fullpath
+- classname = (path == "/" || path == "/index.html") ? 'home' : 'internal'
+
+!!!5
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js{ :lang => "en" }
+  <!--<![endif]-->
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{'http-equiv' => "X-UA-Compatible", :content => "IE=edge"}
+    %title Site Name
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %meta{:name => "description", :content => ""}
+    %meta{:name => "keywords", :content => ""}
+    %link{:href => "/v1/stylesheets/screen.css", :rel => "stylesheet"}
+  %body{:class => classname}
+    %header.site-header{:role => "banner"}
+      .container
+        %h1.site-name
+          %a{:href => "/"} Site Name
+        / Use an image for your logo
+        %a{:href => "#"}
+          %img.main-logo{:alt => "", :src => ""}
+        %nav.primary-navigation{:role => "navigation"}
+          %ul
+            %li
+              %a{:href => "/internal.html"} Internal
+            %li
+              %a{:href => "/internal.html"} Internal Two
+            %li
+              %a{:href => "/internal.html"} Internal Three
+        /
+          <form class="search" role="form">
+          <label for="search">Search:</label>
+          <input type="search" role="search" />
+          <input type="submit" value="Submit" />
+        /  alternatively, use the button element
+        /
+          <button>Submit</button>
+          </form>
+
+    =yield
+
+    %footer.site-footer
+      .container
+        %section.social-media
+          %ul
+            %li
+              %a{:href => "#"} Twitter
+            %li
+              %a{:href => "#"} Tumblr
+            %li
+              %a{:href => "#"} Facebook
+            %li
+              %a{:href => "#"} Flickr
+        %nav.footer-nav
+          %ul
+            %li
+              %a{:href => "#"} About
+            %li
+              %a{:href => "#"} Acknowledgements
+            %li
+              %a{:href => "#"} Support
+
+        %section.contact-information
+          %article#organization-info.vcard{:itemscope => "", :itemtype => "http://schema.org/Organization"}
+            %h1.fn.org{:itemprop => "name"} Company Name
+            .adr{:itemprop => "address", :itemscope => "", :itemtype => "http://schema.org/PostalAddress"}
+              %span{:itemprop => "streetAddress"}
+                %span.street-address 555 Main Street,
+                %span.extended-address Suite 200
+              %span.locality{:itemprop => "addressLocality"} Pittsburgh,
+              %span.region{:itemprop => "addressRegion"} PA
+              %span.postal-code{:itemprop => "postalCode"} 15222
+            %span.tel{:itemprop => "telephone"} 555-1212
+            %a.email{:href => "mailto:company@example.com", :itemprop => "email"} Email Us
+
+        %section.legal{:role => "contentinfo"}
+          %p.copyright Copyright #{Date.today.year.to_s}, Another copyright statement here.

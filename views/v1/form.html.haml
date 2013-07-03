@@ -1,0 +1,38 @@
+%section.main-content{:role => "main"}
+  / MOVE THIS ASIDE IN THE MARKUP AS NEEDED
+  %aside.secondary{:role => "complementary"}
+    %nav.secondary-navigation{:role => "navigation"}
+      %ul
+        %li.home
+          %a{:href => "#"} Secondary Nav Item
+        %li.section
+          %a{:href => "#"} Secondary Nav Item
+        %li.subnav.current Secondary Nav Item
+        %li.subnav
+          %a{:href => "#"} Secondary Nav Item
+        %li.subnav.current
+          %a{:href => "#"} Secondary Nav Item
+  / END ASIDE/SIDEBAR CONTENT
+  / BEGIN PRIMARY CONTENT
+  %section.primary
+    .breadcrumbs-wrapper
+      %ol.breadcrumbs
+        %li
+          %a{:href => "/"} Home
+        %li
+          %a{:href => "#"} First Level
+        %li Current Page
+    %h1.page-title Internal Page
+    %h2.page-subtitle Subtitle For This Page
+    %form{:action => "#", :role => "form"}
+      %label{:for => "first-name"} First Name:
+      %input{:name => "first-name", :placeholder => "First Name:", :type => "text"}
+      %label{:for => "last-name"} Last Name:
+      %input{:name => "last-name", :placeholder => "Last Name:", :type => "text"}
+      %label{:for => "email"} Email:
+      %input{:name => "email", :placeholder => "Email:", :type => "email"}
+      %label{:for => "tel"} Phone:
+      %input{:name => "tel", :placeholder => "Phone:", :type => "tel"}
+      %label{:for => "message"} Message:
+      %textarea{:name => "message", :placeholder => "Your Message:"}
+  / END PRIMARY CONTENT
