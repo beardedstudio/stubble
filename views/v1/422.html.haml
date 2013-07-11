@@ -1,0 +1,19 @@
+!!!5
+%html{:lang => "en"}
+%head
+  %meta{:charset => "utf-8"}
+  %meta{'http-equiv' => "X-UA-Compatible", :content => "IE=edge"}
+  %title 422 : The change you wanted was rejected : Site Name
+  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+  %meta{:name => "description", :content => ""}
+  %meta{:name => "keywords", :content => ""}
+  %link{:href => "/v1/stylesheets/errors.css", :rel => "stylesheet"}
+%body
+  .content-wrap
+    .header
+      %h1#logo
+        %a{:href => "/"} Site Name
+    .dialog
+      %h2 The change you wanted was rejected (422).
+      %p Maybe you tried to change something you didn't have access to.
+      %p Go to the <a href="/">SiteName homepage</a>.

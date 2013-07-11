@@ -1,12 +1,13 @@
+-# Depending on where you are (homepage or 'internal' page), assign a class to the body element
 - path = request.fullpath
-- classname = (path == "/" || path == "/index.html") ? 'home' : 'internal'
+- bodyclass = (path == "/" || path == "/index.html") ? 'home' : 'internal'
 
 !!!5
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
-%html.no-js{ :lang => "en" }
+%html.no-js{:lang => "en"}
   <!--<![endif]-->
   %head
     %meta{:charset => "utf-8"}
@@ -16,12 +17,13 @@
     %meta{:name => "description", :content => ""}
     %meta{:name => "keywords", :content => ""}
     %link{:href => "/v1/stylesheets/screen.css", :rel => "stylesheet"}
-  %body{:class => classname}
+    %script{:src => "/v1/javascripts/vendor/modernizr.min.js"}
+  %body{:class => bodyclass}
     %header.site-header{:role => "banner"}
       .container
         %h1.site-name
           %a{:href => "/"} Site Name
-        / Use an image for your logo
+        -# Use an image for your logo
         %a{:href => "#"}
           %img.main-logo{:alt => "", :src => ""}
         %nav.primary-navigation{:role => "navigation"}
@@ -32,15 +34,13 @@
               %a{:href => "/internal.html"} Internal Two
             %li
               %a{:href => "/internal.html"} Internal Three
-        /
-          <form class="search" role="form">
-          <label for="search">Search:</label>
-          <input type="search" role="search" />
-          <input type="submit" value="Submit" />
-        /  alternatively, use the button element
-        /
-          <button>Submit</button>
-          </form>
+        -#
+          %form.search{:role => "form"}
+            %label{:for => "search"} Search:
+            %input{:type => "search", :role => "search"}
+            %input{:type => "submit", :value => "Submit"}
+            -# Alternatively, you can use the <button> element
+              %button Submit
 
     =yield
 
@@ -49,13 +49,13 @@
         %section.social-media
           %ul
             %li
-              %a{:href => "#"} Twitter
+              %a{:href => "#", :rel => "me"} Social Account
             %li
-              %a{:href => "#"} Tumblr
+              %a{:href => "#", :rel => "me"} Social Account
             %li
-              %a{:href => "#"} Facebook
+              %a{:href => "#", :rel => "me"} Social Account
             %li
-              %a{:href => "#"} Flickr
+              %a{:href => "#", :rel => "me"} Social Account
         %nav.footer-nav
           %ul
             %li
@@ -80,3 +80,10 @@
 
         %section.legal{:role => "contentinfo"}
           %p.copyright Copyright #{Date.today.year.to_s}, Another copyright statement here.
+  -# Uncomment if you need jQuery          
+    -# Load jquery from the google cdn. If they're not available, load a local, minified version
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="/v1/javascripts/vendor/jquery.min.js"><\/script>')
+  -# Uncomment if you need other JS and/or analytics scripts
+    %script{:src => "/v1/javascripts/name-of-file.js"}

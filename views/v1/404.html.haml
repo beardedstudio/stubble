@@ -1,0 +1,19 @@
+!!!5
+%html{:lang => "en"}
+%head
+  %meta{:charset => "utf-8"}
+  %meta{'http-equiv' => "X-UA-Compatible", :content => "IE=edge"}
+  %title 404 : Page Not Found : Site Name
+  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+  %meta{:name => "description", :content => ""}
+  %meta{:name => "keywords", :content => ""}
+  %link{:href => "/v1/stylesheets/errors.css", :rel => "stylesheet"}
+%body
+  .content-wrap
+    .header
+      %h1#logo
+        %a{:href => "/"} Site Name
+    .dialog
+      %h2 Sorry, but the page you were looking for doesn't exist (404).
+      %p You may have mistyped the address or the page may have moved.
+      %p Go to the <a href="/">SiteName homepage</a>.

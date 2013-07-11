@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/contrib/all'
 require 'haml'
 require 'compass'
 require 'breakpoint'
@@ -21,6 +20,44 @@ get '/:version/stylesheets/:name.css' do
   content_type 'text/css', :charset => 'utf-8'
   scss(:"#{params[:version]}/stylesheets/#{params[:name]}", Compass.sass_engine_options)
 end
+
+# routes for version-less error pages
+
+get '/404.html' do
+  haml :"v1/404.html", :layout => false
+end
+
+get '/422.html' do
+  haml :"v1/422.html", :layout => false
+end
+
+get '/500.html' do
+  haml :"v1/500.html", :layout => false
+end
+
+get '/503.html' do
+  haml :"v1/503.html", :layout => false
+end
+
+# routes for versioned error pages
+
+get '/:version/404.html' do
+  haml :"#{params[:version]}/404.html", :layout => false
+end
+
+get '/:version/422.html' do
+  haml :"#{params[:version]}/422.html", :layout => false
+end
+
+get '/:version/500.html' do
+  haml :"#{params[:version]}/500.html", :layout => false
+end
+
+get '/:version/503.html' do
+  haml :"#{params[:version]}/503.html", :layout => false
+end
+
+# routes for non-error pages
 
 get '/' do
   haml :"v1/index.html", :layout => :"v1/layout"

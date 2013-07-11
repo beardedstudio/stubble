@@ -1,0 +1,19 @@
+!!!5
+%html{:lang => "en"}
+%head
+  %meta{:charset => "utf-8"}
+  %meta{'http-equiv' => "X-UA-Compatible", :content => "IE=edge"}
+  %title 500 : We're sorry, but something went wrong : Site Name
+  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+  %meta{:name => "description", :content => ""}
+  %meta{:name => "keywords", :content => ""}
+  %link{:href => "/v1/stylesheets/errors.css", :rel => "stylesheet"}
+%body
+  .content-wrap
+    .header
+      %h1#logo
+        %a{:href => "/"} Site Name
+    .dialog
+      %h2 You've encountered a server error (500).
+      %p A site administrator has been notified and is working to fix the problem.
+      %p Go to the <a href="/">SiteName homepage</a>.
