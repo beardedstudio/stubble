@@ -24,37 +24,37 @@ end
 # routes for version-less error pages
 
 get '/404.html' do
-  haml :"v1/404.html", :layout => false
+  erb :"v1/404.html"
 end
 
 get '/422.html' do
-  haml :"v1/422.html", :layout => false
+  erb :"v1/422.html"
 end
 
 get '/500.html' do
-  haml :"v1/500.html", :layout => false
+  erb :"v1/500.html"
 end
 
 get '/503.html' do
-  haml :"v1/503.html", :layout => false
+  erb :"v1/503.html"
 end
 
 # routes for versioned error pages
 
 get '/:version/404.html' do
-  haml :"#{params[:version]}/404.html", :layout => false
+  erb :"#{params[:version]}/404.html"
 end
 
 get '/:version/422.html' do
-  haml :"#{params[:version]}/422.html", :layout => false
+  erb :"#{params[:version]}/422.html"
 end
 
 get '/:version/500.html' do
-  haml :"#{params[:version]}/500.html", :layout => false
+  erb :"#{params[:version]}/500.html"
 end
 
 get '/:version/503.html' do
-  haml :"#{params[:version]}/503.html", :layout => false
+  erb :"#{params[:version]}/503.html"
 end
 
 # routes for non-error pages
