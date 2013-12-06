@@ -20,6 +20,14 @@
   }
 }
 
+@mixin link-reverse {
+  color: $background-color-subtle; 
+  &:hover, &:focus {
+    color: $background-color;
+    text-decoration: none;
+  }
+}
+
 @mixin heading-link {
   color: $heading-color;
   text-decoration: none;

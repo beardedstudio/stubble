@@ -1,33 +1,32 @@
 %section.main-content{:role => "main"}
   -# If appropriate, you could use an h1 here and provide more meaning in the document outline.
-  
-  -# MOVE THIS ASIDE IN THE MARKUP AS NEEDED
-  %aside.secondary{:role => "complementary"}
-    = haml :'v1/partials/_secondary-navigation.html'
-
-  %section.primary
+  .container
     = haml :'v1/partials/_breadcrumbs.html'
+    %section.primary
+      %h1.page-title Internal Page
+      %h2.page-subtitle Subtitle For This Page
+      
+      %form{:action => "#", :role => "form"}
+        .input
+          %label{:for => "first-name"} First Name:
+          %input{:name => "first-name", :placeholder => "First Name", :type => "text"}
+        .input
+          %label{:for => "last-name"} Last Name:
+          %input{:name => "last-name", :placeholder => "Last Name", :type => "text"}
+        .input
+          %label{:for => "email"} Email:
+          %input{:name => "email", :placeholder => "Email", :type => "email"}
+        .input
+          %label{:for => "tel"} Phone:
+          %input{:name => "tel", :placeholder => "Phone", :type => "tel"}
+        .input
+          %label{:for => "message"} Message:
+          %textarea{:name => "message", :placeholder => "Your Message"}
 
-    %h1.page-title Internal Page
-    %h2.page-subtitle Subtitle For This Page
-    
-    %form{:action => "#", :role => "form"}
-      %label{:for => "first-name"} First Name:
-      %input{:name => "first-name", :placeholder => "First Name:", :type => "text"}
-      
-      %label{:for => "last-name"} Last Name:
-      %input{:name => "last-name", :placeholder => "Last Name:", :type => "text"}
-      
-      %label{:for => "email"} Email:
-      %input{:name => "email", :placeholder => "Email:", :type => "email"}
-      
-      %label{:for => "tel"} Phone:
-      %input{:name => "tel", :placeholder => "Phone:", :type => "tel"}
-      
-      %label{:for => "message"} Message:
-      %textarea{:name => "message", :placeholder => "Your Message:"}
+        %input{:type => "submit", :value => "Submit"}
 
-      %input{:type => "submit", :value => "Submit"}
-
-      -# alternatively, use the <button> element
-        %button{:class => "submit-btn"} Submit
+        -# alternatively, use the <button> element
+          %button{:class => "submit-btn"} Submit
+    -# MOVE THIS ASIDE IN THE MARKUP AS NEEDED
+    %aside.secondary{:role => "complementary"}
+      = haml :'v1/partials/_secondary-navigation.html'

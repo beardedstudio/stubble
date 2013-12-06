@@ -41,9 +41,21 @@
   }
 }
 
+@mixin button-reverse {
+  @include button;
+  background-color: $background-color-subtle;
+  color: $link-color;
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+    background-color: $background-color;
+  }
+}
+
 @mixin button-form {
   @include button;
   border: 0 none;
+  font-size: 1em;
   &:hover,
   &:focus {
     cursor: pointer;

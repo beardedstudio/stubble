@@ -69,14 +69,15 @@
           %article#organization-info.vcard{:itemscope => "", :itemtype => "http://schema.org/Organization"}
             %h1.fn.org{:itemprop => "name"} Company Name
             .adr{:itemprop => "address", :itemscope => "", :itemtype => "http://schema.org/PostalAddress"}
-              %span{:itemprop => "streetAddress"}
+              %div{:itemprop => "streetAddress"}
                 %span.street-address 555 Main Street,
                 %span.extended-address Suite 200
               %span.locality{:itemprop => "addressLocality"} Pittsburgh,
               %span.region{:itemprop => "addressRegion"} PA
               %span.postal-code{:itemprop => "postalCode"} 15222
-            %span.tel{:itemprop => "telephone"} 555-1212
-            %a.email{:href => "mailto:company@example.com", :itemprop => "email"} Email Us
+            %div.tel{:itemprop => "telephone"} 555-1212
+            %div.email
+              %a.email{:href => "#", :itemprop => "email"} Email Us
 
         %section.legal{:role => "contentinfo"}
           %p.copyright Copyright #{Date.today.year.to_s}, Another copyright statement here.
