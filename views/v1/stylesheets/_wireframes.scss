@@ -20,6 +20,33 @@ form .input {
 }
 
 ///// Internal
+img {
+  max-width: 100%;
+}
+
+.lead-image {
+  border: 1px solid $border-color;
+  display: block;
+  margin-bottom: 1em;
+  @include box-sizing(border-box);
+}
+
+.inline-image {
+  margin-bottom: 1em;
+  img {
+    border: 1px solid $border-color;
+    display: block;
+    @include box-sizing(border-box);
+  }
+  figcaption {
+    background-color: $background-color-subtle;
+    @include title-face;
+    font-weight: normal;
+    font-size: 0.875em;
+    padding: 0.5em 1em;
+  }
+}
+
 .breadcrumbs-wrapper {
   @include title-face;
   @include divider-top;
