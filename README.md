@@ -19,7 +19,6 @@ Our goal with Stubble is simple: to be kind to our future selves.
 **To get started:**
 
 1. cd into your project directory
-2. Agree to the rvmrc request
 3. Install the project's dependencies by typing `bundle install`
 4. Start the project by typing `rackup config.ru`
 5. Open a new tab in your browser and navigate to: `http://localhost:9292`

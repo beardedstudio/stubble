@@ -57,15 +57,18 @@ img {
     font-size: 0.875em;
     margin: 0;
     padding: 0 0.5em;
-
     li {
       list-style-type: none;
       @include inline-block;
       margin-right: 0.5em;
       margin-bottom: 0;
-      .divider {
-        margin-left: 0.5em;
-        color: $text-color-subtle;
+      // add a 'divider' character between breadcrumb links
+      + li {
+        &:before {
+          color: $text-color-subtle;
+          content: '\203a'; // could also use the 'greater-than sign': \003e
+          margin-right: 0.5em;
+        }
       }
     }
   }
