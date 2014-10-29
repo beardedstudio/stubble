@@ -47,7 +47,7 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin last-col2 {
-  &:nth-of-type(n) {
+  &:nth-of-type(1n) {
     margin-right: $gutter-width;
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
@@ -65,7 +65,7 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin last-col3 {
-  &:nth-of-type(n) {
+  &:nth-of-type(1n) {
     margin-right: $gutter-width;
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
@@ -83,7 +83,7 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin last-col4 {
-  &:nth-of-type(n) {
+  &:nth-of-type(1n) {
     margin-right: $gutter-width;
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
@@ -101,7 +101,7 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin last-col6 {
-  &:nth-of-type(n) {
+  &:nth-of-type(1n) {
     margin-right: $gutter-width;
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
