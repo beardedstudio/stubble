@@ -1,0 +1,97 @@
+.mobile-navigation {
+  @include pie-clearfix;
+  @include breakpoint($breakpoint-nav) {
+    display: none;
+  }
+}
+
+.menu-trigger, .utility-trigger {
+  border: 1px solid $border-color;
+  background-color: transparent;
+  color: $link-color;
+  font-size: 1.25em;
+  padding: 0.5em;;
+  margin: 0;
+  width: 48%;
+  float: right;
+
+  &:hover, &:focus {
+    cursor: pointer;
+  }
+}
+
+.utility-trigger {
+  margin-right: 2%;
+}
+
+.menu-trigger {
+
+}
+
+.site-header .container {
+  position: relative;
+}
+
+.primary-navigation, .utility-navigation {
+  display: none;
+  clear: both;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  @include breakpoint($breakpoint-nav) {
+    display: block;
+  }
+  ul {
+    background-color: $background-color-subtle;
+    padding: 1em 0;
+    @include breakpoint($breakpoint-nav) {
+      background-color: inherit;
+      padding: 0;
+    }
+  }
+  li {
+    text-align: center;
+    padding-top: 1em;
+    margin-top: 1em;
+    border-top: 1px solid $border-color;
+    &:first-of-type {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: 0 none;
+    }
+    @include breakpoint($breakpoint-nav) {
+      @include inline-block;
+      @include divider-none;
+      text-align: left;
+    }
+  }
+}
+
+.primary-navigation {
+  @include breakpoint($breakpoint-nav) {
+    ul {
+      li {
+        margin-right: 1em;
+        padding-bottom: 0.5em;
+        &.last {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// use for things like user login/logout, other top-level, but lesser important links in header.
+.utility-navigation {
+  @include breakpoint($breakpoint-nav) {
+    padding-top: 0;
+    position: absolute;
+    top: 2em;
+    right: 0;
+    font-size: 0.8em;
+  }
+  li {
+    @include breakpoint($breakpoint-nav) {
+      margin-left: 0.75em;
+    }
+  }
+}

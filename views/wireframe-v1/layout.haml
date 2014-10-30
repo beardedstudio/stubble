@@ -16,8 +16,8 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %meta{:name => "description", :content => ""}
     %meta{:name => "keywords", :content => ""}
-    %link{:href => "/v1/stylesheets/screen.css", :rel => "stylesheet"}
-    %script{:src => "/v1/javascripts/vendor/modernizr.min.js"}
+    %link{:href => "/wireframe-v1/stylesheets/screen.css", :rel => "stylesheet"}
+    %script{:src => "/wireframe-v1/javascripts/vendor/modernizr.min.js"}
   %body{:class => bodyclass}
     %header.site-header{:role => "banner"}
       .container
@@ -26,14 +26,39 @@
         -# Use an image for your logo
         %a{:href => "#"}
           %img.main-logo{:alt => "", :src => ""}
-        %nav.primary-navigation{:role => "navigation"}
-          %ul
-            %li
-              %a{:href => "/internal.html"} Internal
-            %li
-              %a{:href => "/internal.html"} Internal Two
-            %li
-              %a{:href => "/internal.html"} Internal Three
+        
+        %section.mobile-navigation
+          %button.menu-trigger
+            %span.icon-menu
+            %span.screenreader-text Menu
+
+          %button.utility-trigger
+            %span.icon-cog
+            %span.screenreader-text Utility
+
+        .navigation-group
+          %nav.primary-navigation{:role => "navigation"}
+            %ul
+              %li
+                %a{:href => "#"} Primary One
+              %li
+                %a{:href => "#"} Primary Two
+              %li
+                %a{:href => "#"} Primary Three
+              %li
+                %a{:href => "#"} Primary Four
+              %li
+                %a{:href => "#"} Primary Five
+
+          %nav.utility-navigation{:role => "navigation"}
+            %ul
+              %li
+                %a{:href => "#"} Utility One
+              %li
+                %a{:href => "#"} Utility Two
+              %li
+                %a{:href => "#"} Utility Three
+
         -#
           %form.search{:role => "form"}
             %label{:for => "search"} Search:
@@ -81,10 +106,8 @@
 
         %section.legal{:role => "contentinfo"}
           %p.copyright Copyright #{Date.today.year.to_s}, Another copyright statement here.
-  -# Uncomment if you need jQuery          
-    -# Load jquery from the google cdn. If they're not available, load a local, minified version
+
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
-    :javascript
-      window.jQuery || document.write('<script src="/v1/javascripts/vendor/jquery.min.js"><\/script>')
-  -# Uncomment if you need other JS and/or analytics scripts
-    %script{:src => "/v1/javascripts/name-of-file.js"}
+      :javascript
+        window.jQuery || document.write('<script src="/wireframe-v1/javascripts/vendor/jquery.min.js"><\/script>')
+    %script{:src => "/wireframe-v1/javascripts/navigation.js"}

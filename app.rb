@@ -24,19 +24,19 @@ end
 # routes for version-less error pages
 
 get '/404.html' do
-  erb :"v1/404.html"
+  erb :"wireframe-v1/404.html"
 end
 
 get '/422.html' do
-  erb :"v1/422.html"
+  erb :"wireframe-v1/422.html"
 end
 
 get '/500.html' do
-  erb :"v1/500.html"
+  erb :"wireframe-v1/500.html"
 end
 
 get '/503.html' do
-  erb :"v1/503.html"
+  erb :"wireframe-v1/503.html"
 end
 
 # routes for versioned error pages
@@ -60,11 +60,11 @@ end
 # routes for non-error pages
 
 get '/' do
-  haml :"v1/index.html", :layout => :"v1/layout"
+  haml :"wireframe-v1/index.html", :layout => :"wireframe-v1/layout"
 end
 
 get '/:page_name.html' do
-  haml :"v1/#{params[:page_name]}.html", :layout => :"v1/layout"
+  haml :"wireframe-v1/#{params[:page_name]}.html", :layout => :"wireframe-v1/layout"
 end
 
 get '/:version/?' do
