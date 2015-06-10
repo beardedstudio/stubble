@@ -15,9 +15,17 @@
   width: 95%;
 }
 
-html {}
+html {
+  background-color: $footer_color;  
+}
 
 body {}
+
+.main-content {
+  @include pie-clearfix;
+  padding-bottom: 1em;
+  background-color: $background_color;
+}
 
 
 // General Typographic Styles
@@ -101,6 +109,9 @@ em, i {
   font-style: italic;
 }
 
+img {
+  max-width: 100%;
+}
 
 // Other elements
 //////////////////////////////////////

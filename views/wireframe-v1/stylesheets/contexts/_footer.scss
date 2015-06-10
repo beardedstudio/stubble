@@ -1,0 +1,27 @@
+// site-wide footer styles
+
+.site-footer {
+  background-color: $footer-color;
+  color: $text-color-subtle;
+  @include pie-clearfix;
+  padding-top: 1em;
+  a {
+    @include link-reverse;
+  }
+
+  .social-media {    
+    li {
+      @include inline-block;
+      a {
+        @include inline-block;
+        @include button-reverse;
+      }
+    }
+  }
+
+  .legal {
+    .copyright {
+      color: $text-color;
+    }
+  }
+}

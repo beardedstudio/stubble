@@ -1,0 +1,122 @@
+// site-wide form styles
+
+// get rid of "default" iOS button styling for submit buttons
+input[type=submit] {
+  @include appearance(none);
+}
+
+input[type="submit"],
+button[type="submit"] {
+  @include button-form;
+  @include box-sizing(border-box);
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+textarea {
+  padding: 0.5em 0.65em;
+  @include box-sizing(border-box);
+  @include border-radius(2px);
+  color: $text-color-subtle;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: 500px;
+  border: 1px $border-color solid;
+}
+
+form label {
+  display: block;
+}
+
+
+///// Form Layout
+
+form .input {
+  margin-bottom: 0.5em;
+}
+
+.two-up {
+  @include clearfix;
+  > .input {
+    @include column(6);
+    margin-right: 0;
+    margin-left: $gutter-width;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.two-up-wider {
+  @include clearfix;
+  @include breakpoint($breakpoint-m) {
+    > .input {
+      @include column(6);
+      margin-right: 0;
+      margin-left: $gutter-width;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.three-up {
+  @include clearfix;
+  .input {
+    @include column(4);
+    margin-right: 0;
+    margin-left: $gutter-width;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &.zip-city-state {
+    // general input is the city
+    .input {
+      @include column(7);
+      @include breakpoint($breakpoint-m) {
+        @include column(6);
+      }
+      // first child is the zip
+      &:first-child {
+        @include column(12);
+        @include last;
+        @include breakpoint($breakpoint-m) {
+          @include column(3);
+        }
+      }
+      // select is the state
+      &.select {
+        @include column(5);
+        @include last;
+        @include breakpoint($breakpoint-m) {
+          @include column(3);
+          @include last;
+        }
+      }
+    }
+  }
+}
+
+.three-up-wider {
+  @include clearfix;
+
+  .input {
+    @include breakpoint($breakpoint-m) {
+      @include column(4);
+      margin-right: 0;
+      margin-left: $gutter-width;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

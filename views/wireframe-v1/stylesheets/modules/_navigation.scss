@@ -95,3 +95,25 @@
     }
   }
 }
+
+///// Secondary Navigation on internal pages
+
+.secondary-navigation {
+  @include title-face;
+  @include box-sizing(border-box);
+  border: 1px solid $border-color;
+  padding: 1em 0.5em 0.5em 0.5em;
+  margin-bottom: 1.5em;
+
+  ul {
+    margin: 0;
+    li {
+      list-style-type: none;
+      @include divider-top;
+
+    }
+    ul li {
+      padding-left: 1em;
+    }
+  }
+}

@@ -10,12 +10,14 @@
 @import "lib/typographic-mixins";
 @import "lib/general-mixins";
 
-@import "general";
-@import "forms";
-@import "header";
-@import "navigation";
-@import "footer";
-@import "homepage";
-@import "internal";
-@import "notifications";
-@import "wireframes";
+@import "globals/general";
+@import "globals/forms";
+
+@import "modules/navigation";
+@import "modules/notifications";
+
+@import "contexts/header";
+@import "contexts/footer";
+@import "contexts/homepage";
+@import "contexts/internal";
+@import "contexts/wireframes";

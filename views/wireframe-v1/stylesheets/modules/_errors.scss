@@ -1,0 +1,90 @@
+// USED ON ERROR PAGES.
+// Compiles out to its own file.
+
+$default-font-stack: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$headline-default-weight: 700;
+$default-text-transform: none;
+
+.content-wrap {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+.content {
+  margin: 0 auto;
+  max-width: 40.625em;
+}
+
+#{headings(1,3)}{
+  font-family: $default-font-stack;
+  font-weight: $headline-default-weight;
+  text-transform: $default-text-transform;
+  margin-bottom: 0.35em;
+  color: #474747;
+}
+
+h1 {
+  font-size: 2.25em;
+  margin-bottom: 0.35em;
+}
+
+h2 {
+  font-size: 1.35em;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1em;
+  margin-top: 0;
+}
+
+p {
+  color: #808080;
+  margin-bottom: 1em;
+  font-size: 0.857em;
+  font-weight: 400;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#{headings(1,3)}, p {
+  text-align: center;
+}
+
+a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+/* 
+
+#logo {
+  margin: 0 auto;
+  width: ;
+  height: ;
+}
+
+#logo a {
+  background: url(/images/logo.png) 0 0 no-repeat;
+  width: ;
+  height: ;
+  display: block;
+  text-indent: -9999px;    
+}
+
+*/
+@media only screen and (min-width: 37.5em) {
+  h2 {
+    font-size: 1.625em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
+  .header {
+    margin-bottom: 1em;
+  }
+  .dialog {
+    clear: both;
+  }
+}

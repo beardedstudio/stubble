@@ -1,0 +1,84 @@
+// styles specific to internal pages
+
+.internal {
+  .primary {
+    // prevent long URLs from breaking out of container
+    // http://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+    a {
+      @include word-break(break-all);
+      @include hyphens(auto);
+    }
+  }
+}
+
+///// Layout
+
+section.primary {
+  margin-bottom: 2em;
+  @include breakpoint($breakpoint-m) {
+    @include column(8);
+    @include last;
+    float: right;
+  }
+}
+
+aside.secondary {
+  @include breakpoint($breakpoint-m) {
+    @include column(4);
+  }
+}
+
+
+///// Images
+
+.lead-image {
+  border: 1px solid $border-color;
+  display: block;
+  margin-bottom: 1em;
+  @include box-sizing(border-box);
+}
+
+.inline-image {
+  margin-bottom: 1em;
+  img {
+    border: 1px solid $border-color;
+    display: block;
+    @include box-sizing(border-box);
+  }
+  figcaption {
+    background-color: $background-color-subtle;
+    @include title-face;
+    font-weight: normal;
+    font-size: 0.875em;
+    padding: 0.5em 1em;
+  }
+}
+
+///// Breadcrumbs
+
+.breadcrumbs-wrapper {
+  @include title-face;
+  @include divider-top;
+  @include divider-bottom;
+  padding: 0.5em 0;
+  margin-top: 0;
+  .breadcrumbs {
+    font-size: 0.875em;
+    margin: 0;
+    padding: 0 0.5em;
+    li {
+      list-style-type: none;
+      @include inline-block;
+      margin-right: 0.5em;
+      margin-bottom: 0;
+      // add a 'divider' character between breadcrumb links
+      + li {
+        &:before {
+          color: $text-color-subtle;
+          content: '\203a'; // could also use the 'greater-than sign': \003e
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+}
