@@ -7,6 +7,10 @@
 //  @include container(70em);
 //}
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   // change your max-width like so:
   // @include container(68.75em);
@@ -113,6 +117,29 @@ img {
   max-width: 100%;
 }
 
+.button {
+  @include button;
+}
+
+.button-highlight {
+  @include button-highlight;
+}
+
+.button-subtle {
+  @include button-subtle;
+}
+
+.button-reverse {
+  @include button-reverse;
+}
+
 // Other elements
 //////////////////////////////////////
 
+.screenreader-text {
+  @include screenreader-text;
+}
+
+.not-visually-hidden {
+  @include not-visually-hidden;
+}
