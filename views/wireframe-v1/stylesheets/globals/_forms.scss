@@ -18,7 +18,8 @@ input[type="tel"],
 input[type="number"],
 input[type="url"],
 textarea {
-  padding: 0.5em 0.65em;
+  font-size: 1em;
+  padding: 0.45em 0.5em;
   @include box-sizing(border-box);
   @include border-radius(2px);
   color: $text-color-subtle;
